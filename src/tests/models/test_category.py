@@ -1,12 +1,12 @@
 import sys
 sys.path.append('.')
-from src.models.product import Product
-import pytest
+
+import pytest  # noqa: E402
+from src.models.product import Product  # noqa: E402
 
 
 def test_product_instance():
     product = Product('name', "description", 2.0)
-
     assert isinstance(product, Product)
 
 

@@ -1,11 +1,9 @@
 import sys
 sys.path.append('.')
 
-import pytest
-
-from src.controllers.base_controller import BaseController
-from src.controllers.product_controller import ProductController
-from src.models.product import Product
+import pytest  # noqa: E402
+from src.controllers.base_controller import BaseController  # noqa: E402
+from src.controllers.product_controller import ProductController  # noqa: E402
 
 
 @pytest.fixture
@@ -25,7 +23,6 @@ def test_read_all_should_return_list(create_instance):
 
 
 def test_read_by_id_with_invalid_id_should_raise_exception(create_instance):
-
     with pytest.raises(Exception) as exc:
         create_instance.read_by_id(71289379)
     assert str(exc.value) == 'Object not found in the database.'

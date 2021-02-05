@@ -1,7 +1,6 @@
-from sqlalchemy import Column, String, Float
 from sqlalchemy.orm import validates
+from sqlalchemy import Column, String, Float
 from src.models.base_model import BaseModel
-
 
 
 class Product(BaseModel):
@@ -14,7 +13,7 @@ class Product(BaseModel):
         self.name = name
         self.description = description
         self.price = price
-    
+
     @validates('name')
     def validate_name(self, key, name):
         if not isinstance(name, str):
